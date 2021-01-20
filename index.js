@@ -4,7 +4,7 @@ var web = {
   host: 'www.youtube.com'
 }
 
-if(window.location.hostname == web.host) {
+if(window.location.href == web.host) {
   var container = document.getElementById('content')
   var box = document.createElement('div')
   var text = document.createElement('p')
