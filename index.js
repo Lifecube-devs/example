@@ -1,20 +1,16 @@
-//You must to have the 'startScript' function so WebMod can start and stop your script
-//If not the script will not load
-//You also must need app.name so WebMod can detect the name
-//There are 2 others that are crucial to execute the script
-//app.directory shows the directory of which your script will execute
-//app.author lets WebMod know who the author is
+//This is just a simple JS file for YouTube that creates a box on the bottom of the page
 
-app.name = 'WebMod Example Script'
-app.directory = 'https://google.com/'
-app.author = 'WebMod Devoplers'
+var web = {
+  host: 'www.youtube.com'
+}
 
-function startScript() {
-  var div = document.createElement('div')
+if(window.location.hostname == web.host) {
+  var container = document.getElementById('content')
+  var box = document.createElement('div')
   var text = document.createElement('p')
-  div.style = 'height: 50px; width: 100%; background-color: white; position: fixed; bottom: 0;  left: 0; z-index: 999'
-  text.inneHTML = 'WebMod Example Script'
-  text.style = 'position: fixed; left: 50%;'
-  document.body.appendChild(div)
-  div.appendChild(text)
+  box.style = 'position: fixed; bottom: 0px; left: 0px; width: 100%; height: 40px; background-color: black; color: white; z-index: 999'
+  text.style = 'position: fixed; bottom: -5px; left: 40%; color: white; font-size: 40px'
+  text.innerHTML = 'This was created WebMod'
+  container.appendChild(box)
+  box.appendChild(text)
 }
